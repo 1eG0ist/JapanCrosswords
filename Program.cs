@@ -432,7 +432,7 @@ class Program
             new string[] { " ", " ", " ", "5", "3", "e", "e", "e", "e", "e", "b", "b", "b", "b", "b", "e", "e", "e", "b", "b", "b", "e", "e", "e", "e", "e", "e", "e", "e", "e"},
             new string[] { " ", " ", " ", " ", "10", "e", "e", "e", "e", "e", "e", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "e", "e", "e", "e", "e", "e", "e", "e", "e"},
             new string[] { " ", " ", " ", " ", "7", "e", "e", "e", "e", "e", "e", "e", "e", "b", "b", "b", "b", "b", "b", "b", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e"},
-            new string[] { "2", "1", "1", "1", "2", "e", "e", "e", "e", "e", "e", "b", "b", "e", "b", "e", "b", "e", "b", "e", "b", "b", "b", "b", "e", "e", "e", "e", "e", "e"},
+            new string[] { "2", "1", "1", "1", "4", "e", "e", "e", "e", "e", "e", "b", "b", "e", "b", "e", "b", "e", "b", "e", "b", "b", "b", "b", "e", "e", "e", "e", "e", "e"},
             new string[] { " ", " ", " ", " ", "15", "e", "e", "e", "e", "e", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "e", "e", "e", "e", "e"},
             new string[] { " ", " ", " ", "9", "8", "e", "e", "e", "b", "b", "b", "b", "b", "b", "b", "b", "b", "e", "b", "b", "b", "b", "b", "b", "b", "b", "e", "e", "e", "e"},
             new string[] { " ", "5", "3", "5", "3", "e", "e", "b", "b", "b", "b", "b", "e", "b", "b", "b", "e", "e", "e", "b", "b", "b", "b", "b", "e", "b", "b", "b", "e", "e"},
@@ -873,7 +873,7 @@ class Program
             new string[] { " ", " ", " ", "5", "3", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e"},
             new string[] { " ", " ", " ", " ", "10", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e"},
             new string[] { " ", " ", " ", " ", "7", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e"},
-            new string[] { "2", "1", "1", "1", "2", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e"},
+            new string[] { "2", "1", "1", "1", "4", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e"},
             new string[] { " ", " ", " ", " ", "15", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e"},
             new string[] { " ", " ", " ", "9", "8", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e"},
             new string[] { " ", "5", "3", "5", "3", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e"},
@@ -986,7 +986,7 @@ class Program
 
         Console.Title = "JapanCrossword";
         Console.CursorVisible = false;
-        Console.SetWindowSize(Console.LargestWindowWidth-30, Console.LargestWindowHeight-10);
+        Console.SetWindowSize(Console.LargestWindowWidth, Console.LargestWindowHeight);
         Console.WriteLine("███████████████████████████████████");
         Console.WriteLine("█─███─█───█─███────█────█─███─█───█");
         Console.WriteLine("█─███─█─███─███─██─█─██─█──█──█─███");
@@ -1022,6 +1022,7 @@ class Program
                 case ConsoleKey.Enter:
                     if (progress["open"].Contains(levels_menu[coord_y][coord_x]))
                     {
+                        game_mode = false;
                         Play_level(levels_menu[coord_y][coord_x]);
                         flag_to_reset_console = true;
                     } else
@@ -1264,7 +1265,7 @@ class Program
                                     Console.SetCursorPosition(0, levels[lvl_number].Length + 7);
                                     Console.WriteLine(lose);
                                     Console.WriteLine("(Enter)");
-                                    Console.ForegroundColor = ConsoleColor.Black;
+                                    Console.ForegroundColor = ConsoleColor.White;
                                     Clear_all_info_for_lvl(lvl_number);
                                     while (true)
                                     {
